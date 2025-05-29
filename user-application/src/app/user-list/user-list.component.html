@@ -1,0 +1,35 @@
+<div>
+  <h2>User List</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users$ | async as users">
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.website }}</td>
+      </tr>
+      <tr *ngIf="users.length === 0">
+        <td colspan="5" class="data-not-found">Data not found</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top: 12px;">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button 
+      (click)="onPageChange(currentPage + 1)" 
+      [disabled]="(users$ | async)?.length === 0">
+      Next
+    </button>
+  </div>
+</div>
