@@ -1,27 +1,48 @@
 # UserApplication
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.14.
+A modern Angular standalone application featuring:
 
-## Development server
+- **Login with Reactive Forms** and validation
+- **User Management** with a paginated, searchable user grid
+- **Lazy-loaded routes** for login and user list
+- **Auth Guard** to protect user data routes
+- **Material Icons** and responsive, clean UI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Login:** Email and password with validation. Stores user info in localStorage.
+- **User List:** Fetches users from a public API, displays in a styled table with pagination.
+- **Search:** Filter users by name, username, or email.
+- **Logout:** Securely logs out and redirects to login.
+- **Route Protection:** Only logged-in users can access the user list.
+- **Lazy Loading:** Login and user list components are lazy-loaded for performance.
 
-## Build
+---
+
+## Getting Started
+
+### Development server
+
+Run `ng serve` and navigate to [http://localhost:4200/](http://localhost:4200/). The app will reload if you change any source files.
+
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Project Structure
 
-## Further help
+- `src/app/login/` — Login component (standalone, lazy-loaded)
+- `src/app/user-list/` — User list component (standalone, lazy-loaded)
+- `src/app/services/user.service.ts` — User API service
+- `src/app/auth.guard.ts` — Route guard for authentication
+- `src/app/app.routes.ts` — Application routes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
