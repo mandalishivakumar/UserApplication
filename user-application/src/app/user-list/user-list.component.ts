@@ -46,7 +46,8 @@ export class UserListComponent implements OnInit {
 
   // Logout the user and navigate to the login page
   logout(): void {
-    // Add any logout logic here if needed (e.g., clearing localStorage)
+    // Clear all localStorage data on logout
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }
