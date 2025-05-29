@@ -31,10 +31,6 @@ Run `ng serve` and navigate to [http://localhost:4200/](http://localhost:4200/).
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Running unit tests
-
-Run `ng test` to execute unit tests via [Karma](https://karma-runner.github.io).
-
 ---
 
 ## Project Structure
