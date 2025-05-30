@@ -8,7 +8,6 @@ A modern Angular standalone application featuring:
 - **Auth Guard** to protect user data routes
 - **Material Icons** and responsive, clean UI
 
----
 
 ## Features
 
@@ -18,6 +17,7 @@ A modern Angular standalone application featuring:
 - **Logout:** Securely logs out and redirects to login.
 - **Route Protection:** Only logged-in users can access the user list.
 - **Lazy Loading:** Login and user list components are lazy-loaded for performance.
+- **Reusable Header & Button Components:** Modular UI elements for consistency.
 
 ---
 
@@ -27,17 +27,14 @@ A modern Angular standalone application featuring:
 
 Run `ng serve` and navigate to [http://localhost:4200/](http://localhost:4200/). The app will reload if you change any source files.
 
-### Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 
 ## Project Structure
 
 - `src/app/login/` — Login component (standalone, lazy-loaded)
 - `src/app/user-list/` — User list component (standalone, lazy-loaded)
+- `src/app/reusable-components/header/` — Reusable header component
+- `src/app/reusable-components/button/` — Reusable button component
 - `src/app/services/user.service.ts` — User API service
 - `src/app/auth.guard.ts` — Route guard for authentication
 - `src/app/app.routes.ts` — Application routes
-
 
