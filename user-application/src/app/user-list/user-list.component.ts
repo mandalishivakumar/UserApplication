@@ -3,11 +3,13 @@ import { UserService } from '../services/user.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ButtonComponent } from "../reusable-components/button/button.component";
+import { HeaderComponent } from '../reusable-components/header/header.component';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent, HeaderComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

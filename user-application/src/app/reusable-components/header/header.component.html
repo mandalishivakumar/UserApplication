@@ -1,0 +1,17 @@
+<header class="user-header">
+  <div class="user-header-title">
+    <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">group</span>
+    {{ title }}
+  </div>
+  <div class="user-header-user" *ngIf="loggedInUser">
+    <span class="material-icons" style="vertical-align: middle; color: #1976d2; background: #fff; border-radius: 50%; margin-right: 6px;">account_circle</span>
+    <span style="margin-right: 16px;">{{ loggedInUser }}</span>
+    <span 
+      class="material-icons logout-icon" 
+      title="Logout"
+      (click)="onLogout()"
+      style="cursor:pointer; color:#fff; background:#d32f2f; border-radius:50%; padding:6px; transition:background 0.2s;">
+      logout
+    </span>
+  </div>
+</header>

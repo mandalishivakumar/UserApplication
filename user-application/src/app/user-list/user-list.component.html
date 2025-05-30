@@ -1,20 +1,8 @@
-<header class="user-header">
-  <div class="user-header-title">
-    <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">group</span>
-    User Management
-  </div>
-  <div class="user-header-user" *ngIf="loggedInUser">
-    <span class="material-icons" style="vertical-align: middle; color: #1976d2; background: #fff; border-radius: 50%; margin-right: 6px;">account_circle</span>
-    <span style="margin-right: 16px;">{{ loggedInUser }}</span>
-    <span 
-      class="material-icons logout-icon" 
-      title="Logout"
-      (click)="logout()"
-      style="cursor:pointer; color:#fff; background:#d32f2f; border-radius:50%; padding:6px; transition:background 0.2s;">
-      logout
-    </span>
-  </div>
-</header>
+<app-header
+  [title]="'User Management'"
+  [loggedInUser]="loggedInUser"
+  (logout)="logout()"
+></app-header>
 
 <div>
   <table border="1" cellpadding="8" cellspacing="0">
@@ -36,17 +24,14 @@
         <td>{{ user.website }}</td>
       </tr>
       <tr *ngIf="users.length === 0">
-        <td colspan="5" class="data-not-found">Data not found</td>
+        <td colspan="5" class="data-not-found">No Result Found</td>
       </tr>
     </tbody>
   </table>
   <div style="display: flex; justify-content: flex-end; margin-top: 12px;">
-    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+   
+    <app-button [btnTitel]="'Previous'" [disabled]="currentPage === 1" (onClick)="onPageChange(currentPage - 1)">Previous</app-button>
     <span style="margin: 0 10px;">Page {{ currentPage }}</span>
-    <button 
-      (click)="onPageChange(currentPage + 1)" 
-      [disabled]="(users$ | async)?.length === 0">
-      Next
-    </button>
+    <app-button [btnTitel]="'Next'" [disabled]="(users$ | async)?.length === 0" (onClick)="onPageChange(currentPage + 1)">Next</app-button>
   </div>
 </div>
